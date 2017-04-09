@@ -10,3 +10,5 @@ A branch is an independantly modifiable version of a section of repository, and 
 A commit is a save state in a repository commanded by the developer. A good commit message accurate and efficiently describes all changes made to the repository.
 * What is a merge conflict?
 A merge conflict is when two or more modifications to the same object exist during a merge or pull. 
+
+* Secret spooky message *
