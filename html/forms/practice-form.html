@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice-Form!</title>
+</head>
+<body>
+	<form name="ponies" action="success.html" method="post">
+	  <fieldset>
+	  	<div>
+	  	<div>
+	      <label>Create a pony name!</label>
+	      <input type="text" name="fullname">
+	    </div>
+	    <div>
+	      <label>Pick a Kindom of Equestria!</label>
+	      <select name="kingdom">
+	        <option value="canterlot">Canterlot</option>
+	        <option value="crystal-empire">Crystal Empire</option>
+	        <option value="cloudsdale">Cloudsdale</option>
+	      </select>
+	    </div>
+	    <div>
+	      <label>Pick a Type of Pony!</label>
+	      <select name="race">
+	        <option value="earth">Earth Pony</option>
+	        <option value="pegasus">Pegasus Pony</option>
+	        <option value="unicorn">Unicorn Pony</option>
+	        <option value="alicorn">Alicorn Pony</option>
+	      </select>
+	    </div>
+	      <label>Cutie Mark</label>
+	      <input type="text" name="cutiemark" placeholder="Think up a cutie mark!">
+	    </div>
+	    <div>    
+	      <label>Choose your pony birthday!</label>
+	      <input type="date" name="date">
+	    </div>
+	    <div>
+	    	<textarea name="catchphrase" form="ponies">Pony Catch Phrase!!!</textarea>
+	    </div>
+	    <div>
+	      <input type="checkbox" name="cb-agree" value="agree">
+	      I thought more than I wanted to about ponies today.
+	    </div>
+	  </fieldset>
+	  <button type="submit">Create your pony!</button>
+	</form>
+</body>
+</html>
