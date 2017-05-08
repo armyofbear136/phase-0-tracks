@@ -1,0 +1,43 @@
+p#smaller{
+  font-size: .8em;
+}
+.job{
+	color: #e9e5dc;
+	padding: 25px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+.smaller li{
+	font-size: .8em;
+}
+
+.aboutcascading1{
+	cascading: A fundamental feature of CSS is that 
+	more than one style sheet can influence
+	the presentation of a document. 
+	This feature is known as cascading because 
+	the different style sheets are thought of 
+	as coming in a series. Cascading is a 
+	fundamental feature of CSS, because we 
+	realized that any single document could 
+	very likely end up with style sheets from 
+	multiple sources: the browser, the designer, 
+	and possibly the user;
+
+	conflict: the browser decides the rule based 
+	on the latest declarations;
+}
+.aboutpseudoselectors{
+	whatis?: They are CSS selectors with a colon 
+	preceding them as a way of accessing HTML 
+	items that aren't part of the document'd tree;
+}
+p:empty{
+	color: blue;
+}
+.childelement{
+	howtoselect: by adding its tag after the class or id declarations;
+}
+.ponify section{
+	color: rainbow;
+}
