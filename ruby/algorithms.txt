@@ -1,0 +1,26 @@
+-function robotelevatorguide
+	-ask which floor to go to
+		-if floor number is numerical, or converted term (ground -> floor 0) is numerical, and less than the highest floor
+			-starting at the beginning of the floors list, going up by one
+				-if elevator number matches user input
+					-press button
+		-else if floor number could not possibly exist
+			-reset
+
+-function howtowinatlife
+	-are you happy?
+		-if you are happy
+			-good job you're winning at life!
+		-if you're not happy
+			-well then it's time to get happy!
+	-repeat
+
+-function groominglekitty
+	-if your kitty is shedding
+		-if you own a furminator
+			-brush gently along le kitty until fur collection slows
+		-if you dont own a furminator
+			-buy a furminator
+			-brush gently along le kitty until fur collection slows
+		-give hugs and treats
+		
