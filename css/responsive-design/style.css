@@ -12,6 +12,13 @@ cite {
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+  max-width: 960px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20%;
+}
+#external-links li{
+  width: 80%;
 }
 
 /* you're welcome to edit the
@@ -29,4 +36,12 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+body {
+  width: 100%;
+}
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
 }
