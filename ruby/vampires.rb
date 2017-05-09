@@ -15,16 +15,26 @@ while employees > 0
 	garlic = gets.chomp
 	puts "Would you like to enroll in the company’s health insurance?"
 	insurance = gets.chomp
-	if (name == "Drake Cula" || name == "Tu Fang")
-		puts "Definitely a vampire"
-	elsif ((2017-yearborn == age) || (garlic=="yes" || insurance=="yes"))
-		puts "probably not a vampire"
-	elsif ((2017-yearborn != age) || (garlic=="no" || insurance=="no"))
-		puts "probably a vampire"
-	elsif (2017-yearborn != age && garlic=="yes" && insurance=="yes")
-		puts "probably not a vampire"
-	elsif
-		puts "Results inconclusive"
+	puts "Any allergies?"
+	allergies = ""
+	while allergies != "sunshine" && allergies != "done"
+		allergies = gets.chomp
+		if allergies != "sunshine"
+			if (name == "Drake Cula" || name == "Tu Fang")
+				puts "Definitely a vampire"
+			elsif ((2017-yearborn == age) || (garlic=="yes" || insurance=="yes"))
+				puts "probably not a vampire"
+			elsif ((2017-yearborn != age) || (garlic=="no" || insurance=="no"))
+				puts "probably a vampire"
+			elsif (2017-yearborn != age && garlic=="yes" && insurance=="yes")
+				puts "probably not a vampire"
+			elsif
+				puts "Results inconclusive"
+			end
+		elsif allergies == "sunshine"
+			puts "probably a vampire"
+		end
 	end
 	employees -=1
 end
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
