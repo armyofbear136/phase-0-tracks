@@ -39,7 +39,7 @@ puts ""
 puts decrypt("bcd")
 puts ""
 puts decrypt("afe")
-puts ""
+puts " "
 puts decrypt(encrypt("swordfish"))
 puts ""
 puts ""
