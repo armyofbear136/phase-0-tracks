@@ -80,25 +80,151 @@ puts "earth_ponies #{earth_ponies}"
 puts "special_ponies #{special_ponies}"
 puts ""
 
-puts "release 2"
-num = [1,2,3,4,5,6,7,8,9,10]
-p num
-num.map! do |nbr|
-	p nbr
-	if nbr < 5
-		p "#{nbr} less than 5, deleting..."
-		num.delete(nbr)
+puts "release 2 arrays"
+def less_than_5a(num)
+	puts "original array:"
+	p num
+	puts ""
+	num.map! do |nbr|
+		if nbr < 5
+			p "#{nbr} less than 5, deleting..."
+			nil
+		else
+			nbr
+		end
 	end
+	num.delete(nil)
+	puts ""
+	puts "modified array:"
+	yield(num)
 end
-p num
-num2 = [1,2,3,4,5,6,7,8,9,10]
-p num2
-num2.map! do |nbr|
-	p nbr
-	if nbr < 5
-		p "#{nbr} less than 5, saving..."
-	else
-		num.delete(nbr)
+puts ""
+less_than_5a([1,2,3,4,5,6,7,8,9,10]){|thing| p thing}
+
+puts ""
+def more_than_5a(num)
+	puts "original array:"
+	p num
+	puts ""
+	results = Array.new
+	num.map do |nbr|
+		if nbr < 5
+			p "#{nbr} less than 5, saving..."
+			results << nbr
+		end
 	end
+	puts ""
+	puts "modified array:"
+	yield(results)
 end
-p num2
+more_than_5a([1,2,3,4,5,6,7,8,9,10]){|thing| p thing}
+puts ""
+
+def conditiona(num, div)
+	puts "original array:"
+	p num
+	puts ""
+	results = Array.new
+	num.map do |nbr|
+		if nbr%div == 0
+			p "#{nbr} divisible by #{div}"
+			results << nbr
+		end
+	end
+	puts ""
+	puts "modified array:"
+	yield(results)
+end
+conditiona([1,2,3,4,5,6,7,8,9,10], 3){|thing| p thing}
+puts ""
+
+def condition_to_falsea(num, max)
+	puts "original array:"
+	p num
+	puts ""
+	num.map! do |nbr|
+		if nbr%max == 0
+			p "#{nbr} divisible by #{max}, aborting!!!"
+		end
+		nil
+		break if nbr%max==0
+	end
+	num.delete(nil)
+	puts ""
+	puts "modified array:"
+	yield(num)
+end
+condition_to_falsea([1,2,3,4,5,6,7,8,9,10], 5){|thing| p thing}
+puts ""
+
+puts "release 2 arrays"
+def less_than_5h(num)
+	puts "original hash:"
+	p num
+	puts ""
+	num.each do |nbr,word|
+		if nbr < 5
+			p "#{nbr} less than 5, deleting..."
+			num.delete(nbr)
+		end
+	end
+	puts ""
+	puts "modified hash:"
+	yield(num)
+end
+puts ""
+less_than_5h({1 => "one",2 => "two",3 => "three",4 => "four",5 => "five",6 => "six"}){|thing| p thing}
+
+puts ""
+def more_than_5h(num)
+	puts "original hash:"
+	p num
+	puts ""
+	results = Hash.new
+	num.map do |nbr, word|
+		if nbr < 5
+			p "#{nbr} less than 5, saving..."
+			results.store(nbr,word)
+		end
+	end
+	puts ""
+	puts "modified hash:"
+	yield(results)
+end
+more_than_5h({1 => "one",2 => "two",3 => "three",4 => "four",5 => "five",6 => "six"}){|thing| p thing}
+puts ""
+
+def conditionh(num, div)
+	puts "original hash:"
+	p num
+	puts ""
+	results = Hash.new
+	num.map do |nbr, word|
+		if nbr%div == 0
+			p "#{nbr} divisible by #{div}"
+			results.store(nbr, word)
+		end
+	end
+	puts ""
+	puts "modified hash:"
+	yield(results)
+end
+conditionh({1 => "one",2 => "two",3 => "three",4 => "four",5 => "five",6 => "six"}, 3){|thing| p thing}
+puts ""
+
+def condition_to_falseh(num, div)
+	puts "original hash:"
+	p num
+	puts ""
+	num.each do |nbr, word|
+		if nbr%div == 0
+			p "#{nbr} divisible by #{div}, aborting!!"
+		end
+		num.delete(nbr)
+		break if nbr%div == 0
+	end
+	puts ""
+	puts "modified array:"
+	yield(num)
+end
+condition_to_falseh({1 => "one",2 => "two",3 => "three",4 => "four",5 => "five",6 => "six"}, 2){|thing| p thing}
