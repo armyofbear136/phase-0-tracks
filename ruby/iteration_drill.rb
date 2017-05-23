@@ -15,33 +15,21 @@ p strings
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 # ----
-
-ordered_supplies = Array.new
-pos = 0
-innerpos = 0
-stillbest = false
-importantpos = 0
-placeholder = ""
-while pos < zombie_apocalypse_supplies.size
-	innerpos = pos
-	while innerpos < zombie_apocalypse_supplies.size
-		if zombie_apocalypse_supplies[pos][0].bytes[0] < zombie_apocalypse_supplies[innerpos][0].bytes[0]
-			stillbest = true
-		else
-			importantpos = innerpos
-			stillbest = false
+def al(ar)
+	sortedarray = Array.new
+	while ar.size > 0
+		best = ar[0]
+		ar.each do |x|
+			if (x <=> best) == -1
+				best = x
+			end
 		end
-		innerpos +=1
+		sortedarray << best
+		ar.delete(best)
 	end
-	if stillbest == false
-		placeholder = zombie_apocalypse_supplies[pos]
-		zombie_apocalypse_supplies.delete_at(pos) 
-		zombie_apocalypse_supplies.insert(pos, zombie_apocalypse_supplies[importantpos])
-		zombie_apocalypse_supplies.delete_at(importantpos) 
-		zombie_apocalypse_supplies.insert(importantpos, placeholder)
-	end
-	pos +=1
+	sortedarray
 end
+zombie_apocalypse_supplies = al(zombie_apocalypse_supplies)
 p zombie_apocalypse_supplies
 
 # 3. Create a method to see if a particular item (string) is in the
