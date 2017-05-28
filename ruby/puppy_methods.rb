@@ -55,4 +55,6 @@ until instances == 0
 end
 ponies.each do |mylittlepony|
 	mylittlepony.makefriends("Pinkie Pie")
+	mylittlepony.generate_cutie_mark
+	mylittlepony.brohoof
 end
