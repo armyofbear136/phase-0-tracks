@@ -3,7 +3,7 @@
 
 
 STATE_DATA = {
-  "Alabama" => {population_density: 94.65, population: 4822023},
+  "Alabama" =>  {population_density: 94.65, population: 4822023},
   "Alaska" => {population_density: 1.1111, population: 731449},
   "Arizona" => {population_density: 57.05, population: 6553255},
   "Arkansas" => {population_density: 56.43, population: 2949131},
@@ -54,3 +54,4 @@ STATE_DATA = {
   "West Virginia" => {population_density: 77.06, population: 1855413},
   "Wisconsin" => {population_density: 105.2, population: 5726398},
   "Wyoming" => {population_density: 5.851, population: 576412}
+}
