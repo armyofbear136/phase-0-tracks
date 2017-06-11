@@ -1,0 +1,18 @@
+CREATE TABLE towns (id INTEGER PRIMARY KEY, name VARCHAR(255));
+INSERT INTO towns (name) VALUES ("Ponyville");
+INSERT INTO towns (name) VALUES ("Canterlot");
+INSERT INTO towns (name) VALUES ("Appleoosa");
+CREATE TABLE ponies (id INTEGER PRIMARY KEY, name VARCHAR(255), town_id INT, FOREIGN KEY (town_id) REFERENCES towns(id));
+INSERT INTO ponies (name, town_id) VALUES ("Pinkie Pie", 1);
+INSERT INTO ponies (name, town_id) VALUES ("Cadence", 2);
+INSERT INTO ponies (name, town_id) VALUES ("Celestia", 2);
+INSERT INTO ponies (name, town_id) VALUES ("Babs", 3);
+INSERT INTO ponies (name, town_id) VALUES ("Cranky Doodle Donkey", 1);
+SELECT * FROM ponies;
+UPDATE ponies SET town_id=3 WHERE name="Cranky Doodle Donkey";
+SELECT * FROM ponies, towns WHERE ponies.town_id = towns.id;
+SELECT ponies.name, towns.name FROM ponies JOIN towns ON ponies.town_id = towns.id;
+DELETE FROM ponies WHERE name="Cadence";
+SELECT ponies.name, towns.name FROM ponies JOIN towns ON ponies.town_id = towns.id;
+SELECT ponies.name, towns.name FROM ponies INNER JOIN towns ON ponies.town_id = towns.id;
+SELECT ponies.name, towns.name FROM ponies LEFT JOIN towns ON ponies.town_id = towns.id;
